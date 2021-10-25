@@ -1,0 +1,26 @@
+{
+  "name": "icecreamswap-v2-subgraph",
+  "version": "1.0.0",
+  "repository": "https://github.com/icecreamswap/subgraph-v1",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "codegen": "graph codegen --output-dir src/types/",
+    "build": "graph build",
+    "create-local": "graph create icecreamdev/icecreamswap --node http://127.0.0.1:8020/",
+    "deploy-local": "graph deploy icecreamdev/icecreamswap --ipfs http://localhost:5001 --node http://127.0.0.1:8020/ --debug",
+    "deploy": "graph deploy --debug --access-token 57b1a0080e5049579a1ccb06b9722b37 --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ icecreamdev/info",
+    "deploy1": "graph deploy --debug --access-token 57b1a0080e5049579a1ccb06b9722b37 --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ icecreamdev/bscswap",
+    "deploy-staging": "graph deploy $THE_GRAPH_GITHUB_USER/$THE_GRAPH_SUBGRAPH_NAME /Uniswap --ipfs https://api.staging.thegraph.com/ipfs/ --node https://api.staging.thegraph.com/deploy/",
+    "watch-local": "graph deploy graphprotocol/Uniswap2 --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.16.0",
+    "@graphprotocol/graph-ts": "^0.16.0",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.2.2",
+    "eslint-config-prettier": "^6.1.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.2"
+  }
+}
